@@ -43,7 +43,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-indigo-50 via-white to-purple-50 overflow-hidden">
+    <section id="contact" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
       {/* Vibrant background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full opacity-15 blur-3xl" />
@@ -65,7 +65,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-xl text-gray-700 text-center max-w-2xl mx-auto mb-12"
+          className="text-xl text-gray-300 text-center max-w-2xl mx-auto mb-12"
         >
           I'm currently open to new opportunities and collaborations. Whether you have a question
           or just want to say hi, I'll try my best to get back to you!
@@ -91,7 +91,7 @@ export default function Contact() {
                     <Icon className="text-white" size={28} />
                   </div>
                   <h3 className={`text-lg font-semibold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mb-2`}>{item.label}</h3>
-                  <p className="text-gray-600 text-sm break-words">{item.value}</p>
+                  <p className="text-gray-300 text-sm break-words">{item.value}</p>
                 </div>
               </motion.div>
             )
@@ -126,7 +126,7 @@ export default function Contact() {
 
           <div className="relative z-10">
             <h3 className="text-2xl font-bold gradient-text mb-4">Ready to Work Together?</h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               I'm available for freelance projects, consulting opportunities, or full-time positions.
               Let's discuss how I can help drive your business objectives with data-driven insights
               and strategic analysis.
@@ -147,12 +147,12 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-16 pt-8 border-t border-gray-300 text-center"
+          className="mt-16 pt-8 border-t border-slate-700 text-center"
         >
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-300 mb-4">
             Open to Relocation • Canadian Nationality
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-400 text-sm">
             © 2025 Karan Singh. Built with Next.js, TypeScript, Three.js & Framer Motion
           </p>
         </motion.footer>

@@ -12,7 +12,12 @@
       "Bash(gh --version:*)",
       "Bash(npm run dev:*)",
       "WebFetch(domain:vedant-myportfolio.vercel.app)",
-      "Bash(winget install:*)"
+      "Bash(winget install:*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo view:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []

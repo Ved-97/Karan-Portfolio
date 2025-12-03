@@ -13,7 +13,7 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-purple-50">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-20 blur-3xl animate-float" />
@@ -67,7 +67,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight text-gray-100"
             >
               Hi, I'm{' '}
               <span className="gradient-text block mt-2">Karan Singh</span>
@@ -77,7 +77,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4"
+              className="text-2xl sm:text-3xl font-bold text-gray-200 mb-4"
             >
               Business Analyst & Data Analyst
             </motion.p>
@@ -86,7 +86,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl"
+              className="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl"
             >
               Transforming data into actionable insights | 6+ years driving business success through analytics, requirements engineering, and agile delivery
             </motion.p>
@@ -121,19 +121,19 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200"
+              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-700"
             >
               <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">6+</div>
-                <div className="text-sm text-gray-600 font-medium">Years Exp.</div>
+                <div className="text-3xl font-black bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">6+</div>
+                <div className="text-sm text-gray-300 font-medium">Years Exp.</div>
               </div>
               <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">15+</div>
-                <div className="text-sm text-gray-600 font-medium">Projects</div>
+                <div className="text-3xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">15+</div>
+                <div className="text-sm text-gray-300 font-medium">Projects</div>
               </div>
               <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">4</div>
-                <div className="text-sm text-gray-600 font-medium">Organizations</div>
+                <div className="text-3xl font-black bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">4</div>
+                <div className="text-sm text-gray-300 font-medium">Organizations</div>
               </div>
             </motion.div>
           </motion.div>

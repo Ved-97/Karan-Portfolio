@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 15, 23, 42;
-  --background-start-rgb: 249, 250, 251;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 226, 232, 240;
+  --background-start-rgb: 30, 41, 59;
+  --background-end-rgb: 51, 65, 85;
   --primary: 99, 102, 241;
   --secondary: 168, 85, 247;
   --accent: 20, 184, 166;
@@ -44,16 +44,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0ea5e9;
+  background: #6366f1;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #818cf8;
 }
 
 /* Gradient text */
@@ -73,9 +73,9 @@ body {
 
 /* Glassmorphism effect */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(51, 65, 85, 0.5);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(148, 163, 184, 0.2);
 }
 
 /* Animated gradient background */

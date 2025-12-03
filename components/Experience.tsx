@@ -67,7 +67,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-50 via-white to-teal-50 overflow-hidden">
+    <section id="experience" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 overflow-hidden">
       {/* Vibrant background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-15 blur-3xl" />
@@ -84,7 +84,7 @@ export default function Experience() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
             Professional Experience
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             7+ years of driving business transformation through data-driven insights and strategic analysis
           </p>
         </motion.div>
@@ -99,7 +99,7 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className={`relative ${exp.bgColor} rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 overflow-hidden`}>
+              <div className={`relative bg-slate-800/50 rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 border border-slate-700 overflow-hidden`}>
                 {/* Gradient accent bar */}
                 <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${exp.color}`} />
 
@@ -121,11 +121,11 @@ export default function Experience() {
                       </div>
 
                       <div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-1">{exp.role}</h3>
+                        <h3 className="text-2xl font-bold text-gray-100 mb-1">{exp.role}</h3>
                         <p className={`text-xl font-semibold bg-gradient-to-r ${exp.color} bg-clip-text text-transparent mb-2`}>
                           {exp.company}
                         </p>
-                        <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                        <div className="flex flex-wrap gap-4 text-sm text-gray-300">
                           <div className="flex items-center gap-1.5">
                             <Calendar className="w-4 h-4" />
                             <span>{exp.period}</span>
@@ -141,13 +141,13 @@ export default function Experience() {
 
                   {/* Highlights */}
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
                       <Award className="w-4 h-4" />
                       Key Achievements
                     </h4>
                     <ul className="space-y-2.5">
                       {exp.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-gray-700">
+                        <li key={idx} className="flex items-start gap-3 text-gray-300">
                           <div className={`flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gradient-to-br ${exp.color} mt-2`} />
                           <span className="leading-relaxed">{highlight}</span>
                         </li>
@@ -157,14 +157,14 @@ export default function Experience() {
 
                   {/* Projects */}
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                    <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
                       Projects
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.projects.map((project, idx) => (
                         <span
                           key={idx}
-                          className={`px-4 py-2 rounded-full text-sm font-medium bg-white border-2 border-gray-200 text-gray-700 hover:border-transparent hover:bg-gradient-to-r hover:${exp.color} hover:text-white transition-all duration-300 cursor-default shadow-sm`}
+                          className={`px-4 py-2 rounded-full text-sm font-medium bg-slate-700/50 border-2 border-slate-600 text-gray-300 hover:border-transparent hover:bg-gradient-to-r hover:${exp.color} hover:text-white transition-all duration-300 cursor-default shadow-sm`}
                         >
                           {project}
                         </span>

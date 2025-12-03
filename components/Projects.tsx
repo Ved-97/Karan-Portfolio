@@ -83,7 +83,7 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-teal-50 via-white to-indigo-50 overflow-hidden">
+    <section id="projects" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 overflow-hidden">
       {/* Vibrant background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-300 to-pink-300 rounded-full opacity-15 blur-3xl" />
@@ -126,7 +126,7 @@ export default function Projects() {
                   </div>
 
                   <p className={`text-sm font-semibold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3`}>{project.company}</p>
-                  <p className="text-gray-700 mb-4 leading-relaxed">{project.description}</p>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
 
                   <div className={`glass border-2 border-transparent bg-gradient-to-r ${gradient} bg-clip-border rounded-xl p-3 mb-4`}>
                     <p className={`bg-gradient-to-r ${gradient} bg-clip-text text-transparent font-semibold text-sm flex items-center gap-2`}>
@@ -142,7 +142,7 @@ export default function Projects() {
                         className="glass rounded-xl p-3 text-center hover:shadow-md transition-shadow"
                       >
                         <div className={`text-2xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>{metric.value}</div>
-                        <div className="text-xs text-gray-600 font-medium">{metric.label}</div>
+                        <div className="text-xs text-gray-400 font-medium">{metric.label}</div>
                       </div>
                     ))}
                   </div>
@@ -152,7 +152,7 @@ export default function Projects() {
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className={`px-3 py-1.5 glass rounded-lg text-xs text-gray-700 font-medium hover:bg-gradient-to-r hover:${gradient} hover:text-white transition-all duration-300 cursor-default`}
+                      className={`px-3 py-1.5 glass rounded-lg text-xs text-gray-300 font-medium hover:bg-gradient-to-r hover:${gradient} hover:text-white transition-all duration-300 cursor-default border border-slate-600`}
                     >
                       {tag}
                     </span>
