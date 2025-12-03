@@ -6,7 +6,13 @@
       "Bash(git init:*)",
       "Bash(npx create-next-app:*)",
       "Bash(npm install:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Modern Business Analyst Portfolio\n\n- Set up Next.js 14 with TypeScript and Tailwind CSS\n- Implemented 3D interactive sphere with Three.js and React Three Fiber\n- Added smooth animations with Framer Motion and GSAP\n- Created responsive navigation with mobile menu\n- Built hero section with animated 3D background\n- Implemented About section with certifications and education\n- Created timeline-based Experience section\n- Built interactive Skills section with progress bars\n- Designed Projects showcase with metrics and impact\n- Added Contact section with social links\n- Fully responsive design across all devices\n- Optimized for performance and accessibility\n\nTech Stack:\n- Next.js 14, TypeScript, Tailwind CSS\n- Three.js, React Three Fiber, Drei\n- Framer Motion, GSAP, Lucide Icons\n\n🤖 Generated with Claude Code\nhttps://claude.com/claude-code\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git checkout:*)",
+      "Bash(gh --version:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:vedant-myportfolio.vercel.app)",
+      "Bash(winget install:*)"
     ],
     "deny": [],
     "ask": []

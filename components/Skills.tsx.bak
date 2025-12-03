@@ -72,12 +72,11 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-indigo-50 via-white to-purple-50 overflow-hidden">
-      {/* Vibrant Background Elements */}
+    <section id="skills" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+      {/* Dynamic Grey Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-indigo-300 to-purple-300 opacity-20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-300 to-pink-300 opacity-20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-teal-300 to-cyan-300 opacity-20 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-slate-100 to-transparent opacity-40 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-gray-100 to-transparent opacity-40 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -87,7 +86,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-4xl sm:text-5xl font-bold text-center mb-4 gradient-text"
         >
-          What I Do
+          💼 What I Do
         </motion.h2>
 
         <motion.p
@@ -103,16 +102,6 @@ export default function Skills() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, catIndex) => {
             const Icon = category.icon
-            const gradients = [
-              'from-indigo-500 to-purple-500',
-              'from-purple-500 to-pink-500',
-              'from-pink-500 to-rose-500',
-              'from-teal-500 to-cyan-500',
-              'from-cyan-500 to-blue-500',
-              'from-indigo-500 to-blue-500',
-            ]
-            const gradient = gradients[catIndex % gradients.length]
-
             return (
               <motion.div
                 key={catIndex}
@@ -120,38 +109,38 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: catIndex * 0.1 }}
-                className="relative glass rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 overflow-hidden group"
+                className="relative bg-white border border-gray-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-xl transition-all duration-300 overflow-hidden group"
                 whileHover={{ scale: 1.02, y: -3 }}
               >
-                {/* Vibrant gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                {/* Grey gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-gray-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className={`bg-gradient-to-br ${gradient} p-3 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      <Icon className="text-white" size={24} />
+                    <div className="bg-gradient-to-br from-slate-100 to-gray-50 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="text-slate-700" size={24} />
                     </div>
-                    <h3 className={`text-xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>{category.title}</h3>
+                    <h3 className="text-xl font-bold text-slate-900">{category.title}</h3>
                   </div>
 
                   <div className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex}>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-gray-700 font-medium">{skill.name}</span>
-                          <span className={`bg-gradient-to-r ${gradient} bg-clip-text text-transparent font-semibold`}>{skill.level}%</span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden shadow-inner">
-                          <motion.div
-                            className={`h-full bg-gradient-to-r ${gradient} rounded-full shadow-sm`}
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                          />
-                        </div>
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex}>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-gray-700 font-medium">{skill.name}</span>
+                        <span className="bg-gradient-to-r from-slate-600 to-slate-800 bg-clip-text text-transparent font-semibold">{skill.level}%</span>
                       </div>
-                    ))}
+                      <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 rounded-full"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: skillIndex * 0.1 }}
+                        />
+                      </div>
+                    </div>
+                  ))}
                   </div>
                 </div>
               </motion.div>
@@ -164,12 +153,11 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 relative glass rounded-2xl p-8 overflow-hidden shadow-lg"
+          className="mt-16 relative bg-gradient-to-r from-slate-50 via-gray-50 to-slate-50 border border-gray-200 rounded-xl p-8 overflow-hidden"
         >
-          {/* Decorative vibrant elements */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-indigo-300 via-purple-300 to-transparent opacity-20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-teal-300 via-cyan-300 to-transparent opacity-20 rounded-full blur-3xl" />
-          <h3 className="text-2xl font-bold gradient-text mb-6 text-center relative z-10">Core Technologies</h3>
+          {/* Decorative grey element */}
+          <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-slate-200 to-transparent opacity-30 rounded-full blur-3xl" />
+          <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center relative z-10">🏆 Core Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3 relative z-10">
             {[
               'Excel',
@@ -191,31 +179,22 @@ export default function Skills() {
               'Digital Banking',
               'FATCA/CRS Reporting',
               'GitHub',
-            ].map((specialty, index) => {
-              const tagGradients = [
-                'from-indigo-500 to-purple-500',
-                'from-purple-500 to-pink-500',
-                'from-pink-500 to-rose-500',
-                'from-teal-500 to-cyan-500',
-              ]
-              const tagGradient = tagGradients[index % tagGradients.length]
-
-              return (
-                <motion.span
-                  key={index}
-                  className={`px-5 py-2.5 glass border-2 border-transparent rounded-full text-gray-700 font-medium hover:bg-gradient-to-r hover:${tagGradient} hover:text-white hover:border-transparent transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer`}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.03 }}
-                >
-                  {specialty}
-                </motion.span>
-              )
-            })}
+            ].map((specialty, index) => (
+              <motion.span
+                key={index}
+                className="px-4 py-2 bg-white border border-gray-300 rounded-full text-slate-700 font-medium hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-900 hover:text-white hover:border-slate-700 transition-all duration-300 shadow-sm hover:shadow-md"
+                whileHover={{ scale: 1.1, y: -2 }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.03 }}
+              >
+                {specialty}
+              </motion.span>
+            ))}
           </div>
         </motion.div>
+        </div>
       </div>
     </section>
   )

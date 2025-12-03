@@ -5,13 +5,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Karan Singh | Business Analyst Portfolio',
-  description: 'Results-driven Functional Business Analyst specializing in financial systems, SaaS delivery, and enterprise transformation.',
-  keywords: ['Business Analyst', 'Functional Analysis', 'Project Management', 'Agile', 'Scrum', 'SQL', 'Power BI'],
+  title: 'Karan Singh | Business Analyst & Data Analyst Portfolio',
+  description: 'Functional Business Analyst & Data Analyst with 7+ years of experience in financial systems, SaaS solutions, and digital transformation. Specializing in requirements analysis, SQL-based insights, EDA, and data visualization.',
+  keywords: ['Business Analyst', 'Data Analyst', 'Functional Analysis', 'Python', 'Pandas', 'SQL', 'Power BI', 'Tableau', 'EDA', 'Data Visualization', 'Agile', 'Scrum', 'JIRA', 'Azure DevOps'],
   authors: [{ name: 'Karan Singh' }],
   openGraph: {
-    title: 'Karan Singh | Business Analyst Portfolio',
-    description: 'Results-driven Functional Business Analyst with 7+ years of experience',
+    title: 'Karan Singh | Business Analyst & Data Analyst Portfolio',
+    description: 'Functional Business Analyst & Data Analyst with 7+ years of experience specializing in data-driven insights and business transformation',
     type: 'website',
   },
 }

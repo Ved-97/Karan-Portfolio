@@ -21,10 +21,21 @@ const config: Config = {
           800: '#075985',
           900: '#0c4a6e',
         },
+        accent: {
+          blue: '#3b82f6',
+          purple: '#a855f7',
+          pink: '#ec4899',
+          green: '#10b981',
+          teal: '#14b8a6',
+          orange: '#f97316',
+          amber: '#f59e0b',
+        },
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'gradient': 'gradient 8s linear infinite',
+        'shimmer': 'shimmer 2s linear infinite',
       },
       keyframes: {
         float: {
@@ -35,6 +46,17 @@ const config: Config = {
           from: { boxShadow: '0 0 10px #0ea5e9, 0 0 20px #0ea5e9, 0 0 30px #0ea5e9' },
           to: { boxShadow: '0 0 20px #0ea5e9, 0 0 30px #0ea5e9, 0 0 40px #0ea5e9' },
         },
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+      },
+      backgroundSize: {
+        '300%': '300%',
       },
     },
   },

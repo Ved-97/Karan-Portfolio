@@ -73,9 +73,24 @@ const projects = [
 ]
 
 export default function Projects() {
+  const cardGradients = [
+    'from-indigo-500 to-purple-500',
+    'from-purple-500 to-pink-500',
+    'from-pink-500 to-rose-500',
+    'from-teal-500 to-cyan-500',
+    'from-cyan-500 to-blue-500',
+    'from-indigo-500 to-blue-500',
+  ]
+
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-teal-50 via-white to-indigo-50 overflow-hidden">
+      {/* Vibrant background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-300 to-pink-300 rounded-full opacity-15 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-indigo-300 to-teal-300 rounded-full opacity-15 blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,57 +101,66 @@ export default function Projects() {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-800/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 flex flex-col"
-              whileHover={{ scale: 1.03, boxShadow: '0 0 30px rgba(6, 182, 212, 0.2)' }}
-            >
-              <div className="flex-1">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white flex-1">{project.title}</h3>
-                  <TrendingUp className="text-cyan-400 flex-shrink-0 ml-2" size={20} />
-                </div>
+          {projects.map((project, index) => {
+            const gradient = cardGradients[index % cardGradients.length]
 
-                <p className="text-sm text-cyan-400 font-semibold mb-3">{project.company}</p>
-                <p className="text-gray-300 mb-4">{project.description}</p>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative glass rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group"
+                whileHover={{ scale: 1.03, y: -5 }}
+              >
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
 
-                <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-3 mb-4">
-                  <p className="text-cyan-400 font-semibold text-sm flex items-center gap-2">
-                    <ExternalLink size={16} />
-                    {project.impact}
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  {project.metrics.map((metric, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-slate-700/50 rounded-lg p-3 text-center"
-                    >
-                      <div className="text-2xl font-bold text-cyan-400">{metric.value}</div>
-                      <div className="text-xs text-gray-400">{metric.label}</div>
+                <div className="flex-1 relative z-10">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className={`text-xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent flex-1`}>{project.title}</h3>
+                    <div className={`flex-shrink-0 ml-2 p-2 rounded-lg bg-gradient-to-br ${gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <TrendingUp className="text-white" size={20} />
                     </div>
+                  </div>
+
+                  <p className={`text-sm font-semibold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3`}>{project.company}</p>
+                  <p className="text-gray-700 mb-4 leading-relaxed">{project.description}</p>
+
+                  <div className={`glass border-2 border-transparent bg-gradient-to-r ${gradient} bg-clip-border rounded-xl p-3 mb-4`}>
+                    <p className={`bg-gradient-to-r ${gradient} bg-clip-text text-transparent font-semibold text-sm flex items-center gap-2`}>
+                      <ExternalLink size={16} className="text-purple-600" />
+                      {project.impact}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    {project.metrics.map((metric, idx) => (
+                      <div
+                        key={idx}
+                        className="glass rounded-xl p-3 text-center hover:shadow-md transition-shadow"
+                      >
+                        <div className={`text-2xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>{metric.value}</div>
+                        <div className="text-xs text-gray-600 font-medium">{metric.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mt-auto relative z-10">
+                  {project.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className={`px-3 py-1.5 glass rounded-lg text-xs text-gray-700 font-medium hover:bg-gradient-to-r hover:${gradient} hover:text-white transition-all duration-300 cursor-default`}
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {project.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2 py-1 bg-slate-700/50 border border-cyan-500/20 rounded text-xs text-gray-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

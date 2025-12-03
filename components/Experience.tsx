@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, Calendar } from 'lucide-react'
+import { Briefcase, Calendar, MapPin, Award } from 'lucide-react'
 
 const experiences = [
   {
@@ -17,6 +17,8 @@ const experiences = [
       'Reduced FATCA & CRS compliance reporting cycle time by 60% through automation',
     ],
     projects: ['Secure Message Enhancement', 'FATCA & CRS Automation', 'AODA-2 Accessibility Redesign'],
+    color: 'from-indigo-500 to-purple-500',
+    bgColor: 'bg-gradient-to-br from-indigo-50 to-purple-50',
   },
   {
     company: 'Delphi Technologies',
@@ -30,6 +32,8 @@ const experiences = [
       'Enabled digital reach to 10,000+ users across two projects',
     ],
     projects: ['VacSingh Portal', 'COVID-19 Awareness Portal'],
+    color: 'from-purple-500 to-pink-500',
+    bgColor: 'bg-gradient-to-br from-purple-50 to-pink-50',
   },
   {
     company: 'Tazwiz Inc',
@@ -42,6 +46,8 @@ const experiences = [
       'Created technical design documents and business process workflows',
     ],
     projects: ['TiffinFinds Platform'],
+    color: 'from-teal-500 to-cyan-500',
+    bgColor: 'bg-gradient-to-br from-teal-50 to-cyan-50',
   },
   {
     company: 'Amazon',
@@ -54,94 +60,121 @@ const experiences = [
       'Conducted data validation and QA testing for logistics processes',
     ],
     projects: ['Global Fulfillment Optimization'],
+    color: 'from-pink-500 to-rose-500',
+    bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50',
   },
 ]
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <motion.h2
+    <section id="experience" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-50 via-white to-teal-50 overflow-hidden">
+      {/* Vibrant background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-15 blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-teal-300 to-cyan-300 rounded-full opacity-15 blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl font-bold text-center mb-16 gradient-text"
+          className="text-center mb-16"
         >
-          Professional Experience
-        </motion.h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
+            Professional Experience
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            7+ years of driving business transformation through data-driven insights and strategic analysis
+          </p>
+        </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-500 to-blue-500" />
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
+            >
+              <div className={`relative ${exp.bgColor} rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 overflow-hidden`}>
+                {/* Gradient accent bar */}
+                <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${exp.color}`} />
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col md:flex-row gap-8 items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                <div className="md:w-1/2" />
+                {/* Decorative gradient orb */}
+                <div className={`absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br ${exp.color} opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity duration-500`} />
 
-                <motion.div
-                  className="md:w-1/2 bg-slate-800/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300"
-                  whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(6, 182, 212, 0.2)' }}
-                >
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="bg-cyan-500/20 p-3 rounded-lg">
-                      <Briefcase className="text-cyan-400" size={24} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white">{exp.role}</h3>
-                      <p className="text-xl text-cyan-400 font-semibold">{exp.company}</p>
-                      <div className="flex items-center gap-2 text-gray-400 mt-2">
-                        <Calendar size={16} />
-                        <span>{exp.period}</span>
-                        <span className="mx-2">•</span>
-                        <span>{exp.location}</span>
+                <div className="relative">
+                  {/* Header Section */}
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6 gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${exp.color} p-0.5 shadow-lg`}>
+                        <div className="w-full h-full bg-white rounded-xl flex items-center justify-center">
+                          <Briefcase className={`w-6 h-6 bg-gradient-to-br ${exp.color} bg-clip-text text-transparent`} style={{
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            WebkitBackgroundClip: 'text'
+                          }} />
+                        </div>
+                      </div>
+
+                      <div>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-1">{exp.role}</h3>
+                        <p className={`text-xl font-semibold bg-gradient-to-r ${exp.color} bg-clip-text text-transparent mb-2`}>
+                          {exp.company}
+                        </p>
+                        <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                          <div className="flex items-center gap-1.5">
+                            <Calendar className="w-4 h-4" />
+                            <span>{exp.period}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <MapPin className="w-4 h-4" />
+                            <span>{exp.location}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <ul className="space-y-2 mb-4">
-                    {exp.highlights.map((highlight, idx) => (
-                      <li key={idx} className="text-gray-300 flex items-start">
-                        <span className="text-cyan-400 mr-2">▹</span>
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {exp.projects.map((project, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400"
-                      >
-                        {project}
-                      </span>
-                    ))}
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <Award className="w-4 h-4" />
+                      Key Achievements
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {exp.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-gray-700">
+                          <div className={`flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gradient-to-br ${exp.color} mt-2`} />
+                          <span className="leading-relaxed">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </motion.div>
 
-                {/* Timeline dot */}
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
-                  <motion.div
-                    className="w-6 h-6 bg-cyan-500 rounded-full border-4 border-slate-900"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 + 0.3 }}
-                  />
+                  {/* Projects */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                      Projects
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.projects.map((project, idx) => (
+                        <span
+                          key={idx}
+                          className={`px-4 py-2 rounded-full text-sm font-medium bg-white border-2 border-gray-200 text-gray-700 hover:border-transparent hover:bg-gradient-to-r hover:${exp.color} hover:text-white transition-all duration-300 cursor-default shadow-sm`}
+                        >
+                          {project}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
