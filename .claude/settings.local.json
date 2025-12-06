@@ -17,7 +17,16 @@
       "Bash(gh auth:*)",
       "Bash(gh repo view:*)",
       "Bash(git remote add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(curl:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(if exist node_modules echo \"Dependencies installed\" else echo \"Dependencies NOT installed\")",
+      "Bash(dir:*)",
+      "Bash(del nul)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
