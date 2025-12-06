@@ -7,7 +7,6 @@ import { Menu, X } from 'lucide-react'
 const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
@@ -30,14 +29,14 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/80 backdrop-blur-sm'
+        scrolled ? 'bg-[#B87C4C] shadow-lg' : 'bg-[#B87C4C]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <motion.a
             href="#home"
-            className="text-2xl font-bold gradient-text"
+            className="text-2xl font-bold text-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -50,7 +49,7 @@ export default function Navigation() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-cyan-600 transition-colors duration-300 font-medium"
+                className="text-white hover:text-[#F7F1DE] transition-colors duration-300 font-medium"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -60,11 +59,10 @@ export default function Navigation() {
               </motion.a>
             ))}
           </div>
-
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-slate-900 p-2"
+            className="md:hidden text-white p-2"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -78,14 +76,14 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200"
+            className="md:hidden bg-[#B87C4C] border-t border-white/20"
           >
             <div className="px-4 pt-2 pb-4 space-y-2">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block py-2 text-gray-700 hover:text-cyan-600 transition-colors duration-300 font-medium"
+                  className="block py-2 text-white hover:text-[#F7F1DE] transition-colors duration-300 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

@@ -13,12 +13,12 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F7F1DE] via-white to-[#A8BBA3]">
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-20 blur-3xl animate-float" />
-        <div className="absolute top-60 -left-32 w-80 h-80 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full opacity-20 blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute -bottom-32 right-20 w-72 h-72 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-[#A8BBA3] to-[#B87C4C] rounded-full opacity-15 blur-3xl animate-float" />
+        <div className="absolute top-60 -left-32 w-80 h-80 bg-gradient-to-br from-[#F7F1DE] to-[#A8BBA3] rounded-full opacity-15 blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute -bottom-32 right-20 w-72 h-72 bg-gradient-to-br from-[#B87C4C] to-[#C4A484] rounded-full opacity-15 blur-3xl animate-float" style={{ animationDelay: '4s' }} />
       </div>
 
       {/* Floating icons */}
@@ -27,7 +27,7 @@ export default function Hero() {
         return (
           <motion.div
             key={index}
-            className={`absolute ${item.position} text-indigo-300 opacity-20`}
+            className={`absolute ${item.position} text-[#A8BBA3] opacity-20`}
             animate={{
               y: [0, -20, 0],
               rotate: [0, 10, 0],
@@ -44,8 +44,8 @@ export default function Hero() {
       })}
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-0">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -57,19 +57,19 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#A8BBA3]/20 rounded-full mb-6"
             >
-              <Sparkles className="w-5 h-5 text-indigo-600" />
-              <span className="text-sm font-semibold text-indigo-700">Welcome to my portfolio</span>
+              <Sparkles className="w-5 h-5 text-[#B87C4C]" />
+              <span className="text-sm font-semibold text-[#2c3e2e]">Welcome to my portfolio</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight text-gray-100"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight text-black"
             >
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span className="gradient-text block mt-2">Karan Singh</span>
             </motion.h1>
 
@@ -77,7 +77,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="text-2xl sm:text-3xl font-bold text-gray-200 mb-4"
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2c3e2e] mb-3 sm:mb-4"
             >
               Business Analyst & Data Analyst
             </motion.p>
@@ -86,7 +86,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl"
+              className="text-base sm:text-lg text-[#2c3e2e] mb-6 sm:mb-8 leading-relaxed max-w-xl"
             >
               Transforming data into actionable insights | 6+ years driving business success through analytics, requirements engineering, and agile delivery
             </motion.p>
@@ -99,16 +99,16 @@ export default function Hero() {
             >
               <motion.a
                 href="#contact"
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#B87C4C] text-white rounded-xl font-bold shadow-lg hover:shadow-xl hover:bg-[#A8BBA3] transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Let's Connect
-                <ArrowDown className="w-5 h-5 rotate-[-90deg]" />
+                Let&apos;s Connect
+                <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 rotate-[-90deg]" />
               </motion.a>
               <motion.a
                 href="#projects"
-                className="px-8 py-4 bg-white border-2 border-indigo-600 text-indigo-600 rounded-xl font-bold hover:bg-indigo-50 transition-all duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-[#A8BBA3] text-[#A8BBA3] rounded-xl font-bold hover:bg-[#F7F1DE] transition-all duration-300 text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -121,19 +121,19 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-700"
+              className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#A8BBA3]/30"
             >
               <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">6+</div>
-                <div className="text-sm text-gray-300 font-medium">Years Exp.</div>
+                <div className="text-2xl sm:text-3xl font-black text-[#B87C4C]">6+</div>
+                <div className="text-xs sm:text-sm text-[#2c3e2e] font-medium">Years Exp.</div>
               </div>
               <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">15+</div>
-                <div className="text-sm text-gray-300 font-medium">Projects</div>
+                <div className="text-2xl sm:text-3xl font-black text-[#B87C4C]">15+</div>
+                <div className="text-xs sm:text-sm text-[#2c3e2e] font-medium">Projects</div>
               </div>
               <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">4</div>
-                <div className="text-sm text-gray-300 font-medium">Organizations</div>
+                <div className="text-2xl sm:text-3xl font-black text-[#B87C4C]">4</div>
+                <div className="text-xs sm:text-sm text-[#2c3e2e] font-medium">Organizations</div>
               </div>
             </motion.div>
           </motion.div>
@@ -143,16 +143,16 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative lg:block hidden"
+            className="relative hidden lg:block"
           >
             <div className="relative">
               {/* Decorative rings */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 opacity-20 blur-2xl animate-pulse" />
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-10 blur-3xl" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#A8BBA3] to-[#F7F1DE] opacity-20 blur-2xl animate-pulse" />
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#B87C4C] to-[#C4A484] opacity-10 blur-3xl" />
 
               {/* Image container */}
               <div className="relative w-96 h-96 mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-teal-500 rounded-3xl rotate-6 opacity-75" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#F7F1DE] via-[#A8BBA3] to-[#B87C4C] rounded-3xl rotate-6 opacity-75" />
                 <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
                   <Image
                     src="/images/Karan.jpeg"
@@ -166,19 +166,19 @@ export default function Hero() {
 
               {/* Floating badges */}
               <motion.div
-                className="absolute -top-6 -right-6 px-6 py-3 glass rounded-2xl shadow-lg"
+                className="absolute -top-6 -right-6 px-6 py-3 glass rounded-2xl shadow-lg border border-[#A8BBA3]/30"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <div className="text-sm font-bold text-indigo-600">PMP Certified</div>
+                <div className="text-sm font-bold text-[#1e293b]">PMP Certified</div>
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-6 -left-6 px-6 py-3 glass rounded-2xl shadow-lg"
+                className="absolute -bottom-6 -left-6 px-6 py-3 glass rounded-2xl shadow-lg border border-[#B87C4C]/30"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
               >
-                <div className="text-sm font-bold text-purple-600">CSM Certified</div>
+                <div className="text-sm font-bold text-[#1e293b]">CSM Certified</div>
               </motion.div>
             </div>
           </motion.div>
@@ -191,7 +191,7 @@ export default function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
-        <a href="#about" className="flex flex-col items-center gap-2 text-indigo-600 hover:text-purple-600 transition-colors">
+        <a href="#about" className="flex flex-col items-center gap-2 text-[#B87C4C] hover:text-[#A8BBA3] transition-colors">
           <span className="text-sm font-medium">Scroll to explore</span>
           <ArrowDown size={24} />
         </a>
